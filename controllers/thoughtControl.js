@@ -9,7 +9,7 @@ module.exports = {
         Thought.findOne({_id: req.params.thoughtId})
         .select("-__v")
         .then((thought) =>
-        !thought ? res.status(404).json({ message: "No Thought founc with this ID!" })
+        !thought ? res.status(404).json({ message: "No Thought found with this ID!" })
         : res.json(thought) )
         .catch((err) => res.status(500).json(err))
     },
